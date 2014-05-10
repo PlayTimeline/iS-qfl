@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "setLanguage.js",
+  "sourceRoot": "coffee\\",
+  "sources": [
+    "setLanguage.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,MAAM,CAAC,OAAP,GAAiB,SAAC,MAAD,GAAA;AAEf;AAAA;;KAAA;SAGA,MAAM,CAAC,GAAP,CAAW,oBAAX,EAAiC,SAAC,GAAD,EAAM,GAAN,GAAA;AAC/B,IAAA,GAAG,CAAC,MAAJ,CAAW,UAAX,EAAuB,GAAG,CAAC,KAAJ,CAAU,MAAV,CAAvB,CAAA,CAAA;WACA,GAAG,CAAC,QAAJ,CAAa,GAAb,EAF+B;EAAA,CAAjC,EALe;AAAA,CAAjB,CAAA"
+}

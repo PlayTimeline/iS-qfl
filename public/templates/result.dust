@@ -1,0 +1,8 @@
+{>"layouts/master" /}
+
+{<body}
+    <main role="main">
+        {@pre type="content" key="result.show"/}: {.result}
+        <h3><a href="/">{@pre type="content" key="result.tip"/}</a></h3>
+    </main>
+{/body}

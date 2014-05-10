@@ -1,0 +1,51 @@
+{>"layouts/master" /}
+{<title}
+    {@pre type="content" key="foods.title"/}
+{/title}
+
+{<body}
+    <h2>{@pre type="content" key="foods.title"/}</h2>
+    <main role="main">
+        <div class="mb2">
+            <fieldset>
+                <legend>{@pre type="content" key="foods.add-legend"/}</legend>
+                <form method="POST" action="/foods">
+                    <input name="name" placeholder='{@pre type="content" key="foods.name"/}'><br>
+                    <input name="price" placeholder='{@pre type="content" key="foods.price"/}'><br>
+                    <input type="hidden" name="_csrf" value="{_csrf}">
+                    <input type="submit" value='{@pre type="content" key="foods.save"/}'>
+                </form>
+            </fieldset>
+        </div>
+
+        <div class="products">
+            {?foods}
+                <fieldset>
+                    <legend>{@pre type="content" key="foods.list-legend"/}</legend>
+                    <ul class="nm-np inline">
+                        {#foods}
+                            <li>
+                                <form method="POST" action="/foods">
+                                    <input type="hidden" name="item_id" value="{.id}">
+
+                                    <h3 class="nm-np">{.name}</h3>
+                                    <h4 class="nm-np">{.prettyPrice}</h4>
+                                    <h5 class="nm-np tiny">ID: {.id}</h5>
+
+                                    <!-- TODO update feature -->
+                                    <input id="updateBtn" type="button" value='{@pre type="content" key="foods.update"/}'>
+                                    <input type="submit" value='{@pre type="content" key="foods.delete"/}'>
+                                    <!--If we don't at the Cross-Site Request Forgey token, this POST will be rejected-->
+                                    <input type="hidden" name="_csrf" value="{_csrf}">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                </form>
+                            </li>
+                        {/foods}
+                    </ul>
+                </fieldset>
+            {:else}
+                {@pre type="content" key="foods.empty"/}
+            {/foods}
+        </div>
+    </main>
+{/body}
